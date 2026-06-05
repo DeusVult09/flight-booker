@@ -11,5 +11,6 @@
 Airport.create!(code: 'TAS')
 Airport.create!(code: 'RIX')
 Airport.create!(code: 'WAW')
-Airport.create!(code: 'JFK')
 Airport.create!(code: 'KRK')
+
+
