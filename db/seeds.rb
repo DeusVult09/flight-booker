@@ -18,7 +18,7 @@ airports = [tas, rix, waw, krk]
 
 8.times do
   departure = airports.sample
-  arrival = ( airports - [ departure ] )
+  arrival = ( airports - [ departure ] ).sample
 
   Flight.create!(
     start_time: rand(1..30).days.from_now,
