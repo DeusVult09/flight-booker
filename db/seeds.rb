@@ -8,9 +8,22 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Airport.create!(code: 'TAS')
-Airport.create!(code: 'RIX')
-Airport.create!(code: 'WAW')
-Airport.create!(code: 'KRK')
 
+tas = Airport.create!(code: 'TAS')
+rix = Airport.create!(code: 'RIX')
+waw = Airport.create!(code: 'WAW')
+krk = Airport.create!(code: 'KRK')
 
+airports = [tas, rix, waw, krk]
+
+8.times do
+  departure = airports.sample
+  arrival = ( airports - [ departure ] )
+
+  Flight.create!(
+    start_time: rand(1..30).days.from_now,
+    duration: rand(60..600),
+    departure_airport: departure,
+    arrival_airport: arrival
+    )
+end
