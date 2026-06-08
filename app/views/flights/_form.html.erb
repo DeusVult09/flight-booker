@@ -1,0 +1,15 @@
+<search>
+    <%= form_with url: flights_path, method: :get do |form| %>
+      <div class="flight-form">
+        <%= form.label :departure_airport_id, "From"%> 
+        <%= select_tag(:departure_airport_id, options_from_collection_for_select(@aiports, :code, :id))>
+
+        <%= form.label :departure_airport_id, "To"%> 
+        <%= select_tag(:arrival_airport_id, options_from_collection_for_select(@aiports, :code, :id))>
+      </div>
+
+      <div class="date-form">
+        
+      </div>
+    
+</search>

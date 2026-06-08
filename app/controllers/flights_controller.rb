@@ -1,10 +1,10 @@
 class FlightsController < ApplicationController
   def index
-    @flights = Flight.find_by(flights_params)
+    @airports = Airport.all
   end
 
   private 
   def flights_params
-    params.expect(flight: [ :start_time, :duration, :departure_airport, :arrival_airport ])
+    params.expect(flight: [ :start_time, :departure_airport_id, :arrival_airport_id, ])
   end
 end
