@@ -11,6 +11,15 @@
       <div class="date-form">
         <%= form.label :start_date, "Date: " %>
         <%= select_tag(:start_date, options_for_select(@flight_dates))%>
+      </div><br>
+
+      <div class="passenger-form">
+        <%= form.label :passengers_number, "Passengers number:" %><br><br>
+        <%= form.select :passengers_number, (1..5) %>
+      </div><br>
+
+      <div>
+        <%= form.submit "Search" %>
       </div>
     <% end %>
     

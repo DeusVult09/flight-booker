@@ -2,6 +2,7 @@ class FlightsController < ApplicationController
   def index
     @airports = Airport.all
     @flight_dates = flight_date_formatted.map { |date| date.strftime(('%A, %B %e (%Y)')) }
+    
   end
 
   private
