@@ -10,7 +10,7 @@
 
       <div class="date-form">
         <%= form.label :start_date, "Date: " %>
-        <%= select_tag(:start_date, options_for_select(@flight_dates))%>
+        <%= select_tag(:start_date, options_for_select(@flight_date_formatted))%>
       </div><br>
 
       <div class="passenger-form">

@@ -16,11 +16,11 @@ krk = Airport.create!(code: 'KRK')
 
 airports = [ tas, rix, waw, krk ]
 
-8.times do
+15.times do
   departure = airports.sample
   arrival = (airports - [ departure ]).sample
 
-  Flight.create!(
+  flight = Flight.create!(
     start_time: rand(1..30).days.from_now,
     duration: rand(60..600),
     departure_airport: departure,

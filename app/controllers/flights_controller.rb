@@ -1,15 +1,12 @@
 class FlightsController < ApplicationController
   def index
     @airports = Airport.all
-    @flight_dates = flight_date_formatted.map { |date| date.strftime(('%A, %B %e (%Y)')) }
-    
-  end
+    @flights = Flight.all
 
-  private
-
-  def flight_date_formatted
-    (Date.today..5.days.from_now).to_a
+    @flight_dates = @flights.map(&:start_time)
+    @flight_date_formatted = @flight_dates.map { |f| f.strftime(('%A, %B %e (%Y)'))}.uniq
   end
+  
 
   # def flights_params
   # params.expect(flight: [ :start_time, :departure_airport_id, :arrival_airport_id, ])
