@@ -9,10 +9,10 @@
 #   end
 
 
-tas = Airport.create!(code: 'TAS')
-rix = Airport.create!(code: 'RIX')
-waw = Airport.create!(code: 'WAW')
-krk = Airport.create!(code: 'KRK')
+tas = Airport.find_or_create_by!(code: 'TAS')
+rix = Airport.find_or_create_by!(code: 'RIX')
+waw = Airport.find_or_create_by!(code: 'WAW')
+krk = Airport.find_or_create_by!(code: 'KRK')
 
 airports = [ tas, rix, waw, krk ]
 
