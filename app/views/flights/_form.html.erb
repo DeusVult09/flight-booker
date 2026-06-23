@@ -1,4 +1,4 @@
-<search>
+<div class="form">
     <%= form_with url: flights_path, method: :get do |form| %>
       <div class="flight-form">
         <%= form.label :departure_airport_id, "From: "%> 
@@ -9,8 +9,10 @@
       </div><br>
 
       <div class="date-form">
-        <%= form.label :start_date, "Date: " %>
-        <%= select_tag(:start_date, options_for_select(@flight_date_formatted))%>
+        <% flight_dates = @flights.map(&:start_time) %>
+        <% flight_date_formatted = flight_dates.map { |f| f.strftime(('%A, %B %e (%Y)'))}.uniq %>
+        <%= form.label :start_time, "Date: " %>
+        <%= select_tag(:start_time, options_for_select(flight_date_formatted))%>
       </div><br>
 
       <div class="passenger-form">
@@ -21,6 +23,6 @@
       <div>
         <%= form.submit "Search" %>
       </div>
+      <%= params.inspect %>
     <% end %>
-    
-</search>
+</div class="form">   
