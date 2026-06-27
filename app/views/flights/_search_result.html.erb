@@ -1,0 +1,10 @@
+<div class="result-form">
+    <%= form_with url: new_bookings_path, method: :get do |form| %>
+      <% @search_flights.each do |flight| %>
+        <div class="flight-option">
+           <%= radio_button_tag("flights_id", flights.id) %>
+           <%= label_tag(" ") %>
+        </div>
+      <% end %>
+    <% end %>
+</div>
