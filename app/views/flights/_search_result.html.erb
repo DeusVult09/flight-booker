@@ -1,9 +1,13 @@
 <div class="result-form">
-    <%= form_with url: new_bookings_path, method: :get do |form| %>
+    <%= form_with url: new_booking_path, method: :get do |form| %>
       <% @search_flights.each do |flight| %>
         <div class="flight-option">
-           <%= radio_button_tag("flights_id", flights.id) %>
-           <%= label_tag(" ") %>
+           <%= radio_button_tag("flight_id", flight.id) %>
+           <%= label_tag "flight_id_#{flight.id}", 
+                 "#{flight.departure_airport.code} -> #{flight.arrival_airport.code} | 
+                  #{flight.start_time.strftime('%d %b %Y %H:%M')} |
+                  #{flight.duration} min" %>
+           <%= form.hidden_field :passengers_number %>
         </div>
       <% end %>
     <% end %>
