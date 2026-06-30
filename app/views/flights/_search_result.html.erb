@@ -6,7 +6,7 @@
            <%= label_tag "flight_id_#{flight.id}", 
                  "#{flight.departure_airport.code} -> #{flight.arrival_airport.code} | 
                   #{flight.start_time.strftime('%d %b %Y %H:%M')} |
-                  #{flight.duration} min" %>
+                  #{flight.human_duration}" %>
            <%= form.hidden_field :passengers_number %>
         </div>
       <% end %><br><br>
