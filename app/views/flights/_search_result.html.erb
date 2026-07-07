@@ -7,7 +7,7 @@
                  "#{flight.departure_airport.code} -> #{flight.arrival_airport.code} | 
                   #{flight.start_time.strftime('%d %b %Y %H:%M')} |
                   #{flight.human_duration}" %>
-           <%= form.hidden_field :passengers_number %>
+           <%= hidden_field_tag :passengers_number, params[:passengers_number] %>
         </div>
       <% end %><br><br>
 
