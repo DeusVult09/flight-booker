@@ -3,12 +3,13 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @flight = Flight.find(params[:flight_id])
     @passengers_num = params[:passengers_number].to_i
-  end
 
-  def create
     @passengers_num.times do
       @booking.passengers.build
     end
+  end
+
+  def create
 
     if @booking.save
       redirect_to @booking
