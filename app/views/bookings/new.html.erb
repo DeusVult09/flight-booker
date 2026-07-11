@@ -9,9 +9,25 @@
 </div> 
 
 <%= form_with model: @booking do |f| %>
-    <%= f.fields_for :passengers do |sub_form| %>
-        <%= sub_form.text_field :name %>
-        <%= sub_form.text_field :email %>
+
+    <% if @booking.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@booking.errors.count, "error") %> Prevented this user from being saved:</h2>
+        <ul>
+            <% @booking.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+            <% end %>
+        </ul>
+    </div>
     <% end %>
+
+    <% p = 1 %>
+
+    <%= f.fields_for :passengers do |sub_form| %>
+        <p><strong>Passenger</strong> <%= p %></p>
+        <%= sub_form.text_field :name, style: "display: block",  placeholder: "name" %><br>
+        <%= sub_form.text_field :email, style: "display: block",  placeholder: "email" %>
+        <% p += 1 %>
+    <% end %><br>
     <%= f.submit "Book Now" %>
 <% end %>
