@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @booking = Booking.new(booking_params)
 
     if @booking.save
       redirect_to @booking
@@ -19,6 +20,13 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find(params[:id])
+    @flight = @booking.flight
+  end
+
+  private
+  def booking_params
+    params.expect(booking: [ :flight_id, passengers_attributes: [:name, :email]])
   end
 
 end
