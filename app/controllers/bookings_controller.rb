@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-
     if @booking.save
       redirect_to @booking
     else
@@ -26,7 +25,7 @@ class BookingsController < ApplicationController
 
   private
   def booking_params
-    params.expect(booking: [ :flight_id, passengers_attributes: [:name, :email]])
+    params.require(:booking).permit(:flight_id, passengers_attributes: [:name, :email])
   end
 
 end

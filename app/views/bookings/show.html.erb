@@ -13,7 +13,7 @@
         <h2>Passengers Information</h2>
         <% p = 1 %>
         <% @booking.passengers.each do |passenger| %>
-            <p><strong>Passenger</strong> <%= p %></p>
+            <p><i>Passenger </i> <%= p %></p>
             <p><strong>Name:</strong> <%= passenger.name %></p>
             <p><strong>Email: </strong> <%= passenger.email %></p>
             <% p += 1%>
