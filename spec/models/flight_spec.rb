@@ -13,7 +13,8 @@ RSpec.describe Flight, type: :model do
       arrival = Airport.create!(code: 'TAS')
       departure = Airport.create!(code: 'RIX')
 
-      flight = Flight.create!(arrival_airport: arrival, departure_airport: departure)
+      flight = Flight.create!(arrival_airport: arrival, departure_airport: departure, start_time: Time.current,
+      duration: 50)
       expect(flight.arrival_airport).to eq(arrival)
       expect(flight.departure_airport).to eq(departure)
     end
