@@ -8,5 +8,15 @@ RSpec.describe Flight, type: :model do
     end
   end
 
-  
+  describe "associations" do 
+    it "returns its arrival airport and departure airport" do 
+      arrival = Airport.create!(code: 'TAS')
+      departure = Airport.create!(code: 'RIX')
+
+      flight = Flight.create!(arrival_airport: arrival, departure_airport: departure)
+      expect(flight.arrival_airport).to eq(arrival)
+      expect(flight.departure_airport).to eq(departure)
+    end
+  end
+
 end
