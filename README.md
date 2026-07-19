@@ -119,6 +119,7 @@ Lesson Learned:
 - managing booking details
 - seat selection
 - flight cacellation
+- `Book a flight` button appears only when selected flights are displayed
 
 ### Run Model Tests
 Models tests are written using RSpec and include:
