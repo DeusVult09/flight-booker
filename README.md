@@ -128,6 +128,9 @@ Models tests are written using RSpec and include:
 - Passenger validations
 - Booking nested passenger attributes
 
+---
+Live preview: https://flight-booker-t857.onrender.com
+
 Run test:
 ``` bundle exec rspec ```
 

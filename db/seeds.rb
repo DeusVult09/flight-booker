@@ -16,7 +16,7 @@ krk = Airport.find_or_create_by!(code: 'KRK')
 
 airports = [ tas, rix, waw, krk ]
 
-15.times do
+50.times do
   departure = airports.sample
   arrival = (airports - [ departure ]).sample
 
