@@ -4,7 +4,7 @@ class FlightsController < ApplicationController
     @flights = Flight.all
     @flight_dates = @flights.map { |f| f.start_time.to_date }.uniq
 
-    @flight_dates = Flight.none
+    @search_flights = Flight.none
 
     if params[:start_time].present?
       date = Date.parse(params[:start_time])
